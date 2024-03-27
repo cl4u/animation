@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        padding: 160px 0 0 240px;
+      }
+      .door {
+        width: 320px;
+        height: 320px;
+        border: 1px solid gold;
+        perspective: 500px;
+        position: relative;
+        display: flex;
+      }
+      .left,
+      .right {
+        width: 50%;
+        height: 100%;
+        background: greenyellow;
+        transition: 1.2s;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid navajowhite;
+      }
+      .left {
+        transform-origin: left;
+      }
+      .right {
+        transform-origin: right;
+      }
+      .door:hover .left {
+        transform: rotateY(-130deg);
+      }
+      .door:hover .right {
+        transform: rotateY(130deg);
+      }
+      .content {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: rebeccapurple;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="door">
+      <div class="left">left</div>
+      <div class="right">right</div>
+      <div class="content">来了老弟...</div>
+    </div>
+  </body>
+</html>

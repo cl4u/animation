@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "albb";
+  font-weight: 400;
+  src: url("http://at.alicdn.com/wf/webfont/UtqyOOTInYwh/j66d3Uavi7Io.woff2")
+      format("woff2"),
+    url("http://at.alicdn.com/wf/webfont/UtqyOOTInYwh/ElZddLrzcmO1.woff")
+      format("woff");
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+  font-family: albb;
+  border: none !important;
+}
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-size: cover;
+  font-family: albb;
+  background: linear-gradient(45deg, rgb(77, 3, 3), rgb(157, 1, 1));
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./img/1.image") no-repeat;
+  background-size: 100%;
+}
+.perspective-box {
+  perspective: 800px;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+  background: linear-gradient(45deg, rgb(77, 3, 3), rgb(157, 1, 1));
+  background-size: cover;
+  border: 1px dashed yellow !important;
+  width: 1000px;
+  height: 600px;
+  overflow: hidden;
+}
+.perspective-content {
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pc2 {
+  transform: translateZ(-3000px) rotate(0deg);
+}
+.sence-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.sence-in {
+  transform-style: preserve-3d;
+  border: 1px solid #fff;
+  height: 500px;
+}
+.text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 200px;
+  height: 400px;
+  background: url("./img/2.image") no-repeat;
+  background-size: 100% 100%;
+  padding: 0 60px;
+  font-size: 50px;
+  color: #dbbb78;
+}
+.text-right {
+  left: auto;
+  right: 0;
+}
+.pc1 {
+  animation: pc1 20s linear infinite;
+}
+.pc2 {
+  animation: pc2 20s linear infinite;
+}
+.sence-block {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 200px;
+  left: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  background: url("./img/3.image") no-repeat;
+  background-size: cover;
+  font-size: 30px;
+  color: #c4af47;
+}
+.long {
+  position: absolute;
+  left: -400px;
+  bottom: 0;
+  border: 1px solid #fff;
+  width: 400px;
+  height: 300px;
+  background: url("./img/4.image") no-repeat right bottom;
+  background-size: contain;
+}
+.long-right {
+  left: auto;
+  right: -400px;
+  transform: rotateY(180deg);
+}
+.denglong-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 300px;
+  background: url("./img/5.image") no-repeat 50px,
+    url("./img/6.image") no-repeat 150px, url("./img/5.image") no-repeat 800px,
+    url("./img/6.image") no-repeat 720px;
+  background-size: 120px, 100px;
+  transform: translateZ(400px);
+}
+.long2 {
+  position: absolute;
+  left: 200px;
+  bottom: 0;
+  width: 150px;
+  height: 150px;
+  border: 1px solid yellow;
+  background: url("./img/7.image") no-repeat center;
+  background-size: contain;
+  transform: translateZ(600px);
+}
+.long2-right {
+  left: auto;
+  right: 200px;
+}
+.xiangyun {
+  position: absolute;
+  left: -400px;
+  bottom: 0;
+  width: 1600px;
+  height: 600px;
+  background: url("./img/8.image") no-repeat center;
+  background-size: contain;
+  border: 1px solid yellow;
+  transform: translateZ(-200px);
+}
+.sence-box1 {
+  transform: translateZ(-500px);
+}
+.sence-box2 {
+  transform: translateZ(-1500px);
+}
+.sence-box3 {
+  transform: translateZ(-2500px);
+}
+.sence-box4 {
+  transform: translateZ(-3500px);
+}
+.sence-box5 {
+  transform: translateZ(-4500px);
+}
+@keyframes pc1 {
+  0% {
+    transform: translateZ(0px);
+    z-index: 99;
+  }
+  50% {
+    transform: translateZ(6000px);
+    z-index: 99;
+  }
+  50.1% {
+    transform: translateZ(-6000px);
+    z-index: 1;
+  }
+  100% {
+    transform: translateZ(0px);
+    z-index: 1;
+  }
+}
+
+@keyframes pc2 {
+  0% {
+    transform: translateZ(-6000px);
+    z-index: 1;
+  }
+  50% {
+    z-index: 1;
+  }
+  50.1% {
+    z-index: 99;
+  }
+  100% {
+    transform: translateZ(6000px);
+    z-index: 99;
+  }
+}

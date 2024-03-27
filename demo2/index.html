@@ -1,0 +1,263 @@
+<!--
+ * @Author: rk
+ * @Description: 
+ * @Date: 2024-02-07 12:10:40
+ * @LastEditors: rk
+ * @LastEditTime: 2024-02-07 14:37:05
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #000;
+      }
+      .bg_item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 300px;
+      }
+      .main2 {
+        width: 300px;
+        height: 300px;
+        transform-style: preserve-3d;
+        transform: rotateX(71deg);
+        position: relative;
+      }
+      .position {
+        position: absolute;
+      }
+      .center {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .firstCircle {
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: repeating-conic-gradient(
+          rgb(42, 153, 255) 0,
+          rgb(42, 153, 255) 0.2%,
+          transparent 0.2%,
+          transparent 1.5%,
+          rgb(42, 153, 255) 1.5%
+        );
+        -webkit-mask: radial-gradient(
+          transparent,
+          transparent 69%,
+          #000 69%,
+          #000 100%
+        );
+      }
+      .secondCircle {
+        width: 550px;
+        height: 550px;
+        border-radius: 50%;
+        background: repeating-conic-gradient(
+          rgb(42, 153, 255) 0,
+          rgb(42, 153, 255) 0.5%,
+          transparent 0.5%,
+          transparent 2%,
+          rgb(42, 153, 255) 2%
+        );
+        -webkit-mask: radial-gradient(
+          transparent,
+          transparent 65%,
+          #000 65%,
+          #000 100%
+        );
+      }
+      .thirdCircle {
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: repeating-conic-gradient(
+          rgb(42, 153, 255) 20%,
+          rgb(42, 153, 255) 30%,
+          transparent 30%,
+          transparent 30%,
+          rgb(42, 153, 255) 50%
+        );
+        -webkit-mask: radial-gradient(
+          transparent,
+          transparent 65%,
+          #000 65%,
+          #000 100%
+        );
+      }
+      .fourthCircle {
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        border: 3px solid rgb(5, 216, 244);
+      }
+      .fifthCircle {
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        background: repeating-conic-gradient(
+          rgb(0, 236, 255) 0,
+          rgb(0, 236, 255) 2%,
+          transparent 2%,
+          transparent 3%,
+          rgb(0, 236, 255) 3%
+        );
+        -webkit-mask: radial-gradient(
+          transparent,
+          transparent 50%,
+          #000 60%,
+          #000 100%
+        );
+        transform: translateX(-50%) translateY(-50%) translateZ(200px);
+        animation: rotate2 3s linear infinite;
+      }
+      .sixthCircle {
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        border: 10px solid rgb(5, 252, 255);
+        border-color: rgb(10, 238, 254) transparent;
+        animation: rotate1 3s linear infinite;
+      }
+      .seventhCircle {
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        border: 5px solid rgb(5, 252, 255);
+        animation: rotate3 3s linear infinite;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .bar {
+        width: 280px;
+        height: 300px;
+        background: transparent;
+        top: 50%;
+        left: 50%;
+        transform: translateZ(150px) translateX(-50%) translateY(-50%)
+          rotateX(90deg);
+        display: flex;
+        gap: 20px;
+        overflow: hidden;
+      }
+      .line {
+        width: 3px;
+        height: 100px;
+        background: linear-gradient(
+          to top,
+          rgb(69, 164, 254),
+          rgba(42, 153, 255, 0.1)
+        );
+      }
+      .line1 {
+        animation: line 1s linear infinite;
+      }
+      .line2 {
+        animation: line 0.5s 0.2s linear infinite;
+      }
+      .line3 {
+        animation: line 1.5s 0.1s linear infinite;
+      }
+      .line4 {
+        animation: line 1.1s 0.1s linear infinite;
+      }
+      .line5 {
+        animation: line 1.6s 0.3s linear infinite;
+      }
+      .line6 {
+        animation: line 2s 0.4s linear infinite;
+      }
+      .line7 {
+        animation: line 1.2s 0.2s linear infinite;
+      }
+      .line8 {
+        animation: line 1.1s 0.1s linear infinite;
+      }
+      .line9 {
+        animation: line 1.9s 0.3s linear infinite;
+      }
+      .line10 {
+        animation: line 1.7s 0.3s linear infinite;
+      }
+      .line11 {
+        animation: line 1.3s 0.1s linear infinite;
+      }
+      .line12 {
+        animation: line 1.4s 0.4s linear infinite;
+      }
+      @keyframes rotate1 {
+        0% {
+          transform: translateZ(20px) translateX(-50%) translateY(-50%)
+            rotateZ(0deg);
+        }
+        100% {
+          transform: translateZ(20px) translateX(-50%) translateY(-50%)
+            rotateZ(-360deg);
+        }
+      }
+      @keyframes rotate2 {
+        0% {
+          transform: translateX(-50%) translateY(-50%) translateZ(60px)
+            rotateZ(0deg);
+        }
+        100% {
+          transform: translateX(-50%) translateY(-50%) translateZ(60px)
+            rotateZ(360deg);
+        }
+      }
+      @keyframes rotate3 {
+        0% {
+          transform: translateX(-50%) translateY(-50%) translateZ(30px)
+            rotateZ(0deg);
+        }
+        100% {
+          transform: translateX(-50%) translateY(-50%) translateZ(30px)
+            rotateZ(360deg);
+        }
+      }
+      @keyframes line {
+        0% {
+          transform: translateY(-220px);
+        }
+        100% {
+          transform: translateY(220px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg_item">
+      <div class="main2">
+        <div class="firstCircle position center"></div>
+        <div class="secondCircle position center"></div>
+        <div class="thirdCircle position center"></div>
+        <div class="fourthCircle position center"></div>
+        <div class="fifthCircle position center"></div>
+        <div class="sixthCircle position center"></div>
+        <div class="seventhCircle position center"></div>
+        <div class="bar position flex">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <div class="line line3"></div>
+          <div class="line line4"></div>
+          <div class="line line5"></div>
+          <div class="line line6"></div>
+          <div class="line line7"></div>
+          <div class="line line8"></div>
+          <div class="line line9"></div>
+          <div class="line line10"></div>
+          <div class="line line11"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

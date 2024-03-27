@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        margin: 150px 0 0 240px;
+        width: 75px;
+        height: 75px;
+        position: relative;
+      }
+      .round {
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: crimson;
+        animation: circle 2.8s ease infinite;
+        transform-origin: 50% 75px;
+      }
+      .round:nth-child(1) {
+        z-index: 7;
+      }
+      .round:nth-child(2) {
+        z-index: 6;
+        height: 12px;
+        width: 12px;
+        background: rebeccapurple;
+        animation-delay: 0.2s;
+      }
+      .round:nth-child(3) {
+        z-index: 5;
+        height: 11px;
+        width: 11px;
+        background: tomato;
+        animation-delay: 0.4s;
+      }
+      .round:nth-child(4) {
+        z-index: 4;
+        height: 10px;
+        width: 10px;
+        background: orange;
+        animation-delay: 0.6s;
+      }
+      .round:nth-child(5) {
+        z-index: 3;
+        height: 9px;
+        width: 9px;
+        background: hotpink;
+        animation-delay: 0.8s;
+      }
+      .round:nth-child(6) {
+        z-index: 2;
+        height: 8px;
+        width: 8px;
+        background: gold;
+        animation-delay: 1s;
+      }
+      .round:nth-child(7) {
+        z-index: 1;
+        height: 7px;
+        width: 7px;
+        background: greenyellow;
+        animation-delay: 1.2s;
+      }
+      @keyframes circle {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="round"></div>
+      <div class="round"></div>
+      <div class="round"></div>
+      <div class="round"></div>
+      <div class="round"></div>
+      <div class="round"></div>
+      <div class="round"></div>
+    </div>
+  </body>
+</html>

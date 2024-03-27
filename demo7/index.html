@@ -1,0 +1,122 @@
+<!--
+ * @Author: rk
+ * @Description: 
+ * @Date: 2024-03-13 11:04:31
+ * @LastEditors: rk
+ * @LastEditTime: 2024-03-13 11:21:29
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        margin: 150px;
+      }
+      .mainbox {
+        width: 320px;
+        height: 320px;
+        position: relative;
+        overflow: hidden;
+      }
+      .content {
+        width: 320px;
+        height: 320px;
+        line-height: 320px;
+        text-align: center;
+        background: lawngreen;
+      }
+      .line {
+        position: absolute;
+      }
+      .line:nth-child(1) {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, orange);
+        animation: animate1 8s linear infinite;
+      }
+      @keyframes animate1 {
+        0% {
+          left: -100%;
+        }
+        50%,
+        100% {
+          left: 100%;
+        }
+      }
+      .line:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, rebeccapurple);
+        animation: animate2 8s linear infinite;
+        animation-delay: 2s;
+      }
+      @keyframes animate2 {
+        0% {
+          top: -100%;
+        }
+        50%,
+        100% {
+          top: 100%;
+        }
+      }
+      .line:nth-child(3) {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        background: linear-gradient(270deg, transparent, blue);
+        animation: animate3 8s linear infinite;
+        animation-delay: 4s;
+      }
+      @keyframes animate3 {
+        0% {
+          right: -100%;
+          height: 3px;
+        }
+        50%,
+        100% {
+          right: 100%;
+          height: 2px;
+        }
+      }
+      .line:nth-child(4) {
+        left: 0;
+        bottom: -100%;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, red);
+        animation: animate4 8s linear infinite;
+        animation-delay: 6s;
+      }
+      @keyframes animate4 {
+        0% {
+          bottom: -100%;
+        }
+        50%,
+        100% {
+          bottom: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainbox">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <div class="content">线条围着边框环绕</div>
+    </div>
+  </body>
+</html>

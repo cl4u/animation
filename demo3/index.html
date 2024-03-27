@@ -1,0 +1,164 @@
+<!--
+ * @Author: rk
+ * @Description: 
+ * @Date: 2024-02-07 14:48:34
+ * @LastEditors: rk
+ * @LastEditTime: 2024-02-07 15:17:28
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #010e4b;
+      }
+      .radar {
+        width: 7vw;
+        height: 7vw;
+        display: inline-block;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        border: 1px solid #42dff1;
+        -webkit-box-shadow: 0 0 14px #42dff1;
+        box-shadow: 0 0 14px #42dff1;
+      }
+      .line-hor {
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(66, 223, 241, 0.2);
+      }
+      .line-ver {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-right: 1px solid rgba(66, 223, 241, 0.2);
+      }
+      .sec-border {
+        width: 5vw;
+        height: 5vw;
+      }
+      .thi-border {
+        width: 3vw;
+        height: 3vw;
+      }
+      .four-border {
+        width: 1vw;
+        height: 1vw;
+      }
+      .sec-border,
+      .thi-border,
+      .four-border {
+        border: 1px solid rgba(66, 223, 241, 0.2);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .cover {
+        position: relative;
+        left: -100%;
+        top: -100%;
+        width: 150%;
+        height: 150%;
+        overflow: hidden;
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+        animation: rotation 3s linear infinite;
+      }
+      .sector {
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        bottom: 0;
+        right: 0;
+        transform: rotate(25deg);
+        transform-origin: 100% 100%;
+        background: linear-gradient(
+          185deg,
+          #42dff1 40%,
+          hsla(0, 0%, 100%, 0) 90%
+        );
+      }
+      .round {
+        position: absolute;
+        width: 7vw;
+        height: 7vw;
+        left: 0;
+        bottom: 0;
+        background: #42dff1;
+        border-radius: 100%;
+        animation: animate 3s linear infinite;
+        z-index: -1;
+      }
+      .hc-text {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .g-font-risk {
+        margin-bottom: 8px;
+        color: #51f2ff;
+        font-size: 1.3vw;
+      }
+      .hc-name {
+        color: #fff;
+        font-size: 0.95vw;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(1turn);
+        }
+      }
+      @keyframes animate {
+        0% {
+          transform: scale(0.1);
+          opacity: 0.4;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="radar">
+      <div class="line-hor"></div>
+      <div class="line-ver"></div>
+      <div class="sec-border"></div>
+      <div class="thi-border"></div>
+      <div class="four-border"></div>
+      <div class="cover">
+        <div class="sector"></div>
+      </div>
+      <div class="round"></div>
+      <div class="hc-text">
+        <div class="g-font-risk">
+          <span>123</span>
+        </div>
+        <div class="hc-name">电流</div>
+      </div>
+    </div>
+  </body>
+</html>

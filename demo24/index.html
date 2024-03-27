@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = "天生我材必有用,千金散尽还复来";
+      document.write(
+        `<div id="a" style="font-size:40px;margin:200px">${str}</div>`
+      );
+      let col = [
+        "#FFCC00",
+        "#3333FF",
+        "#FFCC00",
+        "#FF0000",
+        "#FFCC00",
+        "#CC33FF",
+      ];
+      let i = 0;
+      function dColor() {
+        let strName = "";
+        for (let j = 0; j < str.length; ++j) {
+          strName += `<font color="${col[i]}">${str.substring(
+            j,
+            j + 1
+          )}</font>`;
+          i = i + 1;
+          if (i === col.length) {
+            i = 0;
+          }
+        }
+        a.innerHTML = strName;
+        setTimeout(() => {
+          dColor();
+        }, 200);
+      }
+      dColor();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!--
+ * @Author: rk
+ * @Description: 
+ * @Date: 2024-03-27 12:01:14
+ * @LastEditors: rk
+ * @LastEditTime: 2024-03-27 12:19:06
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 1000px;
+        height: 580px;
+        margin: 50px auto;
+        border: 1px solid khaki;
+        position: relative;
+      }
+      .one {
+        width: 500px;
+        height: 300px;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        margin: 100px auto 0;
+      }
+      img {
+        width: 500px;
+        height: 300px;
+      }
+      .word {
+        display: none;
+        width: 500px;
+        height: 300px;
+        background: rgba(145, 223, 100, 0.771);
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        padding: 80px 50px;
+        font-size: 20px;
+        color: #fff;
+        font-family: "microsoft yahei";
+        line-height: 30px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .one:hover .word {
+        display: block;
+      }
+      .one .word::after{
+        content: "";
+        position: absolute;
+        z-index: 3;
+        width: 120px;
+        height:1px;
+        background: #fff;
+        bottom: 80px;
+        left: 190px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="one">
+        <img src="./bg1.jpg" alt="" />
+        <div class="word">
+          刘亦菲，1987年8月25日出生于湖北省武汉市，华语影视女演员、歌手，毕业于北京电影学院2002级表演系本科
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

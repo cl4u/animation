@@ -1,0 +1,51 @@
+<!--
+ * @Author: rk
+ * @Description: 
+ * @Date: 2024-03-13 10:46:12
+ * @LastEditors: rk
+ * @LastEditTime: 2024-03-13 11:00:57
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        margin: 120px auto;
+        background: beige;
+      }
+      .circle-breath {
+        background: pink;
+        box-shadow: 0 0 0 0 rgb(204, 73, 152);
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        animation: breath 2.5s infinite;
+      }
+      @keyframes breath {
+        0% {
+          transform: scale(0.6);
+          box-shadow: 0 0 0 0 rgba(204, 73, 152, 60%);
+        }
+        60% {
+          transform: scale(1);
+          box-shadow: 0 0 0 40px rgba(204, 73, 152, 0%);
+        }
+        100% {
+          transform: scale(0.6);
+          box-shadow: 0 0 0 0 rgba(204, 73, 152, 0%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle-breath"></div>
+  </body>
+</html>

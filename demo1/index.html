@@ -1,0 +1,190 @@
+<!--
+ * @Author: rk
+ * @Description: 
+ * @Date: 2024-02-07 10:48:01
+ * @LastEditors: rk
+ * @LastEditTime: 2024-02-07 11:50:45
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 300px;
+        transform: translateZ(-150px);
+        transform-style: preserve-3d;
+        transform: rotateX(66deg); /* 固定角度后，页面直接呈现3d效果，可以不需要下边的js代码*/
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        transform-style: preserve-3d;
+        position: relative;
+        border-radius: 50%;
+        outline: 2px solid rgb(42, 153, 255);
+        outline-offset: 10px;
+        border: 5px solid rgb(42, 153, 255);
+        border-left-color: transparent;
+        border-right-color: transparent;
+        background: repeating-radial-gradient(
+            #000,
+            #000 50%,
+            transparent 50%,
+            transparent 60%,
+            #000 60%,
+            #000 100%
+          ),
+          repeating-conic-gradient(
+            rgb(42, 153, 255) 0,
+            rgb(42, 153, 255) 4%,
+            transparent 4%,
+            transparent 5%
+          );
+        animation: rotate2 2s linear infinite;
+      }
+      .box::before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 0;
+        left: 0;
+        background: repeating-radial-gradient(
+            #000,
+            #000 50%,
+            transparent 50%,
+            transparent 60%,
+            #000 60%,
+            #000 100%
+          ),
+          repeating-conic-gradient(
+            rgb(42, 153, 255) 0,
+            rgb(42, 153, 255) 4%,
+            transparent 4%,
+            transparent 5%
+          );
+        animation: rotate1 2s linear infinite;
+      }
+      .box::after {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 0;
+        left: 0;
+        background: repeating-linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent 80px,
+          rgba(42, 135, 255, 0.1) 80px,
+          rgb(42, 135, 255) 130px
+        );
+        -webkit-mask: repeating-linear-gradient(
+          to right,
+          transparent 0px,
+          transparent 80px,
+          #000 80px,
+          #000 82px
+        );
+        transform: rotateX(90deg);
+        animation: line 2s linear infinite;
+      }
+
+      @keyframes line {
+        0% {
+          transform: translateZ(-50px) rotateX(90deg) rotateY(0deg);
+        }
+        100% {
+          transform: translateZ(200px) rotateX(90deg) rotateY(-360deg);
+        }
+      }
+      @keyframes rotate1 {
+        0% {
+          transform: translateZ(200px) rotateZ(0deg);
+        }
+        100% {
+          transform: translateZ(200px) rotateZ(-720deg);
+        }
+      }
+      @keyframes rotate2 {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        100% {
+          transform: rotateZ(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    
+    <!-- <script>
+      // 如果需要以下代码，则注释body下的transform:rotateX()代码，动画整体效果是跟随鼠标转动而转动
+
+      
+      let elem = document.querySelector("body");
+      // 用于判断是否正在拖动
+      let isDragging = false;
+      // 初始鼠标x坐标
+      let initialX = 0;
+      // 初始鼠标y坐标
+      let initialY = 0;
+      // 当前鼠标x坐标
+      let currentX = 0;
+      // 当前鼠标y坐标
+      let currentY = 0;
+      // 初始旋转角度(x轴)
+      let initialRotationX = 0;
+      // 初始旋转角度(y轴)
+      let initialRotationY = 0;
+
+      elem.addEventListener("mousedown", function (e) {
+        // 当鼠标按下时
+        initialY = e.clientY;
+        // 获取初始旋转角度（Y轴）
+        initialRotationY = parseInt(
+          getComputedStyle(elem)
+            .getPropertyValue("transform")
+            .replace(/[^0-9-.,]/g, "")
+            .split(",")[4]
+        );
+        // 获取初始旋转角度（X轴）
+        initialRotationX = parseInt(
+          getComputedStyle(elem)
+            .getPropertyValue("transform")
+            .replace(/[^0-9-.,]/g, "")
+            .split(",")[5]
+        );
+        // 设置isDragging为true，表示正在拖动
+        isDragging = true;
+      });
+
+      document.addEventListener("mousemove", function (e) {
+        if (isDragging) {
+          // 获取当前鼠标Y坐标
+          currentY = e.clientY;
+          // Y轴方向移动的距离
+          let dy = currentY - initialY;
+          // 根据移动方向计算新的旋转角度（Y轴）
+          let newRotationY = initialRotationY + dy * -1;
+          console.log(newRotationY);
+          // 设置元素的旋转角度
+          elem.style.transform = `rotateX(${newRotationY}deg)`;
+        }
+      });
+
+      document.addEventListener("mouseup", function (e) {
+        isDragging = false;
+      });
+    </script> -->
+  </body>
+</html>

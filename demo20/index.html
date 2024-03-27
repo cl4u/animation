@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bg {
+        height: 300px;
+        line-height: 300px;
+        background: #000;
+      }
+      .shine {
+        font-family: "Microsoft YaHei";
+        font-size: 60px;
+        text-align: center;
+        background: -webkit-linear-gradient(left, #0f0, #00f) 0 0 no-repeat; /*设置线性渐变*/
+        -webkit-background-size: 160px; /*设置背景大小*/
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0.3);
+        -webkit-animation: shine 3s infinite;
+      }
+      @keyframes shine {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 100% 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <p class="shine">天生我材必有用，千金散尽还复来</p>
+    </div>
+  </body>
+</html>
